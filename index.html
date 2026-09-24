@@ -35,6 +35,42 @@
       <label>难点批注<input id="noteInput" placeholder="如：第2小节小锣晚半拍"></label>
     </section>
 
+    <section class="variation-console">
+      <h2>变奏预演</h2>
+      <div class="variation-row">
+        <label>选小节
+          <select id="varMeasure">
+            <option value="0">第1小节</option>
+            <option value="1">第2小节</option>
+            <option value="2">第3小节</option>
+            <option value="3">第4小节</option>
+          </select>
+        </label>
+        <label>密度档
+          <select id="varDensity">
+            <option value="稀疏">稀疏（4点）</option>
+            <option value="适中" selected>适中（8点）</option>
+            <option value="密集">密集（12点）</option>
+          </select>
+        </label>
+        <button id="generateBtn" type="button">生成三份候选</button>
+        <button id="lockBtn" class="ghost-btn" type="button">保留口令：关</button>
+      </div>
+      <p id="lockHint" class="lock-hint" hidden>保留模式已开：点已填口令的格子可「钉住 / 取消钉住」，钉住的格在任何候选里都不会动；空拍不能钉。</p>
+
+      <div id="audition" class="audition" hidden>
+        <div class="audition-head">
+          <h3>试听区（候选未采纳，不影响正式谱面）</h3>
+          <button id="dismissBtn" class="ghost-btn" type="button">放弃本批</button>
+        </div>
+        <div id="auditionMeta" class="audition-meta"></div>
+        <div id="candidateList" class="candidate-list"></div>
+      </div>
+      <div id="auditionConflict"></div>
+    </section>
+
+    <div id="statusBox" class="status" role="status" aria-live="polite"></div>
+
     <section class="stage">
       <aside class="segments">
         <h2>已存方案</h2>
@@ -51,6 +87,8 @@
       </aside>
     </section>
   </main>
+  <script src="./variations.js"></script>
+  <script src="./candidates.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

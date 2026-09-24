@@ -224,6 +224,223 @@ select {
   }
 }
 
+/* ---------- 变奏预演 ---------- */
+
+.variation-console {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.variation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px;
+}
+
+.variation-row label {
+  grid-template-columns: none;
+  min-width: 150px;
+}
+
+.ghost-btn {
+  border: 1px solid var(--accent);
+  background: white;
+  color: var(--accent);
+}
+
+#lockBtn.active {
+  border-color: var(--active);
+  background: var(--active);
+  color: white;
+}
+
+.lock-hint {
+  margin: 10px 0 0;
+  color: var(--active);
+  font-size: 13px;
+}
+
+.audition {
+  margin-top: 14px;
+  border: 2px dashed var(--gold);
+  border-radius: 8px;
+  background: #fffdf6;
+  padding: 14px;
+}
+
+.audition-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.audition-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.audition-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.candidate-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.candidate-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px;
+}
+
+.candidate-card header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.mini-row {
+  display: grid;
+  grid-template-columns: 44px repeat(4, 1fr);
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.mini-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mini-cell {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #faf6ee;
+  color: transparent;
+  font-size: 15px;
+  padding: 0;
+  cursor: default;
+}
+
+.mini-cell.filled {
+  background: #fff1d1;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.mini-cell.playing {
+  outline: 2px solid var(--active);
+  outline-offset: -2px;
+  background: #d9efea;
+}
+
+.candidate-card footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.candidate-card footer button {
+  flex: 1;
+  min-height: 34px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+[data-action="preview"].playing {
+  border-color: var(--active);
+  background: var(--active);
+  color: white;
+}
+
+.adopt-btn {
+  background: var(--gold);
+}
+
+.conflict-card {
+  margin-top: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: #fdeeec;
+  padding: 12px 14px;
+}
+
+.conflict-card header {
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.conflict-card p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.conflict-card .conflict-reason {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.status {
+  min-height: 22px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.status.ok {
+  color: var(--active);
+}
+
+.status.info {
+  color: var(--muted);
+}
+
+.status.error {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.lock-badge {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 10px;
+  color: var(--active);
+}
+
+.cell {
+  position: relative;
+}
+
+.cell.locked.filled {
+  background: #e3f0ea;
+  color: var(--active);
+}
+
+@media (max-width: 1160px) {
+  .candidate-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .top,
   .transport {
