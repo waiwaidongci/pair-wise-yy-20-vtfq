@@ -217,6 +217,200 @@ select {
   font-size: 14px;
 }
 
+/* ---- 变奏预演 ---- */
+.variation {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgb(255 250 242 / 96%);
+  box-shadow: 0 18px 42px rgb(83 57 29 / 10%);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.variation-head h2 {
+  margin-bottom: 4px;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.variation-controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.variation-controls label {
+  width: 140px;
+}
+
+.primary {
+  background: var(--active);
+}
+
+.candidate-area {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.candidate-area .placeholder {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.candidate {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.candidate.active {
+  border-color: var(--active);
+  box-shadow: 0 0 0 2px rgb(27 106 104 / 25%);
+}
+
+.candidate header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.candidate .hits {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mini-grid {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.mini-row {
+  display: grid;
+  grid-template-columns: 20px repeat(4, 1fr);
+  gap: 2px;
+}
+
+.mini-inst {
+  color: var(--muted);
+  font-size: 12px;
+  align-self: center;
+}
+
+.mini-cell {
+  height: 28px;
+  border: 1px solid #e6dcc9;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: var(--accent);
+  background: #fffdf8;
+}
+
+.mini-cell.hit {
+  background: #fff1d1;
+  font-weight: 800;
+}
+
+.mini-cell.command {
+  background: #f4e2c0;
+  border-color: var(--gold);
+  font-weight: 900;
+}
+
+.mini-cell.playing {
+  outline: 2px solid var(--active);
+  outline-offset: -2px;
+  background: #d9efea;
+}
+
+.candidate-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.candidate-actions button {
+  flex: 1;
+  min-height: 34px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+button.ghost {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+button.accept {
+  background: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.audition-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.audition-footer .seed-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+button.danger {
+  color: var(--accent);
+}
+
+.variation-message {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 18px;
+}
+
+.variation-message.ok {
+  color: var(--active);
+}
+
+.variation-message.error {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cell.locked {
+  cursor: not-allowed;
+  background: #f6efe2;
+}
+
+.cell.locked.filled {
+  background: #f4e2c0;
+  color: #7a5a18;
+}
+
 @media (max-width: 1160px) {
   .stage,
   .controls {

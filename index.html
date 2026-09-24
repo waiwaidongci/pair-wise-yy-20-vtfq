@@ -35,6 +35,26 @@
       <label>难点批注<input id="noteInput" placeholder="如：第2小节小锣晚半拍"></label>
     </section>
 
+    <section class="variation">
+      <div class="variation-head">
+        <h2>变奏预演（临时加花试听）</h2>
+        <p class="hint">选一小节生成稀疏 / 适中 / 密集三份候选，口令格（强拍齐奏）整格保留。只在试听区响，确认采纳才替换这一小节。</p>
+      </div>
+      <div class="variation-controls">
+        <label>目标小节
+          <select id="variationMeasure">
+            <option value="0">第1小节</option>
+            <option value="1">第2小节</option>
+            <option value="2">第3小节</option>
+            <option value="3">第4小节</option>
+          </select>
+        </label>
+        <button id="generateBtn" type="button" class="primary">生成三份候选</button>
+      </div>
+      <div id="candidateArea" class="candidate-area"></div>
+      <div id="variationMessage" class="variation-message" role="status"></div>
+    </section>
+
     <section class="stage">
       <aside class="segments">
         <h2>已存方案</h2>
@@ -51,6 +71,6 @@
       </aside>
     </section>
   </main>
-  <script src="./app.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
